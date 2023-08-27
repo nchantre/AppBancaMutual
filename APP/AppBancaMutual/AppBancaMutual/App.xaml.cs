@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AppBancaMutual.Service;
+using AppBancaMutual.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -6,12 +8,36 @@ namespace AppBancaMutual
 {
     public partial class App : Application
     {
+        #region Services
+        // private ApiService apiService;
+        //DataService dataService;
+        //DialogService dialogService;
+        NavigationService navigationService;
+        #endregion
+
+
         public App()
         {
             InitializeComponent();
+            navigationService = new NavigationService();
+            navigationService.SetMainPage("LoginPage");
 
-            MainPage = new MainPage();
+           // MainPage = new MainPage();
         }
+
+        #region Properties
+        public static NavigationPage Navigator
+        {
+            get;
+            internal set;
+        }
+
+        public static MasterPage Master
+        {
+            get;
+            internal set;
+        }
+        #endregion
 
         protected override void OnStart()
         {
