@@ -53,6 +53,5 @@
 
   <ItemGroup>
     <Folder Include="Interface\" />
-    <Folder Include="PartialViews\" />
   </ItemGroup>
 </Project>
