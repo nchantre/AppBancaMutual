@@ -69,35 +69,7 @@
                 <Setter Property="Margin" Value="15,0,0,0" />
             </Style>
 
-            <converters:CardNumberToImageConverter
-                x:Key="CardConverter"
-                Amex="ic_amex"
-                Dinners="ic_dinersclub"
-                Discover="ic_discover"
-                JCB="ic_jcb"
-                MasterCard="ic_mastercard"
-                NotRecognized="nocards"
-                Visa="ic_visa" />
-
-            <converters:CardNumberToImageConverter
-                x:Key="CardLightConverter"
-                Amex="americanexpresslogo"
-                Dinners="ic_dinersclub_white.png"
-                Discover="ic_discover_light"
-                JCB="ic_jcb"
-                MasterCard="ic_mastercard_white"
-                NotRecognized="ic_chip"
-                Visa="ic_visa_white" />
-
-            <converters:CardNumberToColorConverter
-                x:Key="CardColorConverter"
-                Amex="#3177CB"
-                Dinners="#1B4F8F"
-                Discover="#E9752F"
-                JCB="#9E2921"
-                MasterCard="#394854"
-                NotRecognized="#544661"
-                Visa="#2867BA" />
+          
 
         </ResourceDictionary>
 
