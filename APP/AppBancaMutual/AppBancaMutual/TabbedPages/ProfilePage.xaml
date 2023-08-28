@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppBancaMutual.TabbedPages.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:abstractions="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+    xmlns:customControl="clr-namespace:AppBancaMutual.CustomControl;assembly=AppBancaMutual"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:partialViews="clr-namespace:AppBancaMutual.PartialViews;assembly=AppBancaMutual"
+    BackgroundColor="White">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout
+                Margin="20,0,20,10"
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All">
+           
+            </StackLayout>
+            
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>

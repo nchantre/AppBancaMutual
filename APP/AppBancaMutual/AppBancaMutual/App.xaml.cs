@@ -1,5 +1,7 @@
 ﻿using AppBancaMutual.Service;
 using AppBancaMutual.Views;
+using DLToolkit.Forms.Controls;
+using Plugin.SharedTransitions;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,10 +21,14 @@ namespace AppBancaMutual
         public App()
         {
             InitializeComponent();
+
+            //FlowListView.Init();
+
+            //MainPage = new SharedTransitionNavigationPage(new MainPage());
             navigationService = new NavigationService();
             navigationService.SetMainPage("LoginPage");
 
-           // MainPage = new MainPage();
+            // MainPage = new MainPage();
         }
 
         #region Properties

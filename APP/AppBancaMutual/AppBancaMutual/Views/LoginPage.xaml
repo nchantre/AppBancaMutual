@@ -1,57 +1,118 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:renderers="clr-namespace:AppBancaMutual.Renderers;assembly=AppBancaMutual"
+             xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+            BackgroundColor="White"
+            NavigationPage.HasNavigationBar="False"
+            Visual="Material"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
              mc:Ignorable="d"           
              Title="Login"
              x:Class="AppBancaMutual.Views.LoginPage">
     <ContentPage.Content>
-        <ScrollView   
-            BindingContext="{Binding Login}">
-            <StackLayout Padding="20">
+
+        <AbsoluteLayout
+             BindingContext="{Binding Login}">
+
+            <StackLayout
+               
+                AbsoluteLayout.LayoutBounds="0,0,1,.5"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="{StaticResource MainColor}" />
+            <StackLayout AbsoluteLayout.LayoutBounds=".5,.1,.5,.3" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="All">
+             
+                <Label
+                    FontFamily="{StaticResource PingFangBold}"
+                    FontSize="25"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Log In"
+                    TextColor="White" />
+
                 <Image
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"            
+                    VerticalOptions="CenterAndExpand"
                     Source="home">
                 </Image>
-                <Label 
-                    TextColor="#cccccc"
-                      FontAttributes="Bold"
-                      FontSize="22"                  
-                    Text="Usuario">
-                </Label>
-                <Entry
-                    Text="{Binding Email, Mode=TwoWay}"
-                    Keyboard="Email"               
-                    Placeholder="Usuario">
-                </Entry>
-                <Label
-                     TextColor="#cccccc"
-                      FontAttributes="Bold"
-                      FontSize="22"                  
-                    Text="Password">
-                </Label>
-                <Entry  
-                    Text="{Binding Password, Mode=TwoWay}"
-                    IsPassword="True"               
-                    Placeholder="Password">
-                </Entry>
-                <ActivityIndicator
+            </StackLayout>
+            <yummy:PancakeView
+                Margin="10,0,10,0"
+                Padding="25"
+                AbsoluteLayout.LayoutBounds="1,1,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="White"
+                CornerRadius="35,35,0,0   "
+              
+                VerticalOptions="EndAndExpand">
+                <StackLayout>
+                    <Label
+                        FontFamily="{StaticResource PingFangRegular}"
+                        FontSize="15"
+                        Text="Usuario"
+                        TextColor="{StaticResource DarkFontColor}" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <renderers:BorderlessEntry 
+                            Text="{Binding Email, Mode=TwoWay}"
+                            TextColor="{StaticResource DarkFontColor}" />
+                    </Frame>
+                    <Label
+                        FontFamily="{StaticResource PingFangRegular}"
+                        FontSize="15"
+                        Text="Password"
+                        TextColor="{StaticResource DarkFontColor}" />
+                  
+                    <Frame
+                        Style="{StaticResource FrameStyle}">
+                        <renderers:BorderlessEntry TextColor="{StaticResource DarkFontColor}"
+                                                  
+                                                   Text="{Binding Password, Mode=TwoWay}" />
+                    </Frame>
+                    <Button
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Command="{Binding LoginCommand}"
+                        Margin="50,10,50,10"
+                        BackgroundColor="{StaticResource MainColor}"
+                        BorderColor="{StaticResource MainColor}"
+                        BorderWidth="2"
+                
+                        CornerRadius="30"
+                        FontFamily="{StaticResource PingFangRegular}"
+                        FontSize="20"
+                        HeightRequest="57"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Log In"
+                        TextColor="White"
+                        WidthRequest="227" />
+                    <Button 
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        Command="{Binding RegisterCommand}"
+                        Margin="50,10,50,10"
+                        BackgroundColor="#D48C24"
+                        BorderColor="#D48C24"
+                        BorderWidth="2"
+                        CornerRadius="30"
+                        FontFamily="{StaticResource PingFangRegular}"
+                        FontSize="12"
+                        HeightRequest="57"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Registro"
+                        TextColor="White"
+                        WidthRequest="227" />
+                    <ActivityIndicator
                     IsRunning="{Binding IsRunning,Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand">
 
-                </ActivityIndicator>
+                    </ActivityIndicator>
+                </StackLayout>
+            </yummy:PancakeView>
 
-                <Button
-                   
-                    IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                    Command="{Binding LoginCommand}"
-                    BorderRadius="23"
-                    BackgroundColor="#8a69fd"                   
-                    TextColor="White"
-                    Text="Ingreso">
-                </Button>
-            </StackLayout>
-        </ScrollView>
+        </AbsoluteLayout>
+
+
+   
     </ContentPage.Content>
 </ContentPage>

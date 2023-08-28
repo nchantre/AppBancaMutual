@@ -4,27 +4,31 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             BackgroundColor="{StaticResource FontColor}"
+             BackgroundColor="White"
              mc:Ignorable="d"
              Title="Menu"
              x:Class="AppBancaMutual.Views.MenuPage">
     <ContentPage.Content>
         <StackLayout
             Padding="10,30">
-            <Grid BackgroundColor="Transparent">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="200" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid>
 
-                    <Image  Source="bg.png" Aspect="AspectFill" />
+                    <Image 
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="CenterAndExpand"            
+                    VerticalOptions="CenterAndExpand"
+                    Source="home.png" Aspect="AspectFill" />
 
                 </Grid>
             </Grid>
 
             <ListView 
-                BackgroundColor="{StaticResource FontColor}" 
+           
                 ItemsSource="{Binding MyMenu}" 
                 HasUnevenRows="True"
                 SeparatorVisibility="None">
@@ -48,7 +52,7 @@
                                 <Label 
                                     Grid.Column="1"  
                                     Text="{Binding Title}"
-                                    TextColor="{StaticResource BackgroundColor}" 
+                                 
                                     VerticalOptions="Center">
                                 </Label>
                             </Grid>

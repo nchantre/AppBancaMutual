@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppBancaMutual.ModalPages.ProductCommentsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    BackgroundColor="#f7f7f7"
+    Visual="Material">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout
+                BackgroundColor="White"
+                Orientation="Horizontal"
+                VerticalOptions="Start">
+                <StackLayout
+                    Padding="10"
+                    BackgroundColor="#f7f7f7"
+                    HorizontalOptions="Start">
+                    <Image
+                        sharedTransitions:Transition.Name="Detadil"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        Source="machine"
+                        WidthRequest="60" />
+                </StackLayout>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Label
+                        FontSize="15"
+                        Text="Scissor"
+                        TextColor="#2E2E2E" />
+                    <Label
+                        FontSize="11"
+                        Text="Cellur"
+                        TextColor="#917A7A" />
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -136,9 +136,19 @@ namespace AppBancaMutual.ViewModels
 
         private async void RegisterCommands()
         {
+
+
+            if (string.IsNullOrEmpty(this.Email))
+            {
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Ingresar el usuario",
+                    "Accept");
+                return;
+            }
             //para Tener en cuenta para Instaciamiento formularios
-           // MainViewModel.GetInstance().Personafrm = new PersonafrmViewModel();
-           // await navigationService.NavigateOnLogin("PersonafrmPage");
+            MainViewModel.GetInstance().registroPersonaViewModel = new RegistroPersonaViewModel();
+            await navigationService.NavigateOnLogin("RegistroPersonaPage");
 
         }
 

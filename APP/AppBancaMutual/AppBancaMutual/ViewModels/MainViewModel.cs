@@ -10,8 +10,10 @@ namespace AppBancaMutual.ViewModels
         #region ViewModels
         //############################################
         public LoginViewModel Login { get; set; }
+
+        public RegistroPersonaViewModel registroPersonaViewModel { get; set; }
         //public HabeasdataViewModel Habeasdata { get; set; }
-        //public RegistroViewModel Registro { get; set; }
+        public RegistroViewModel Registro { get; set; }
         //public FrmunoViewModel Frmuno { get; set; }
         //public FrmdosViewModel Frmdos { get; set; }
         //public RecomendacionViewModel Recomendacion { get; set; }

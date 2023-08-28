@@ -47,11 +47,11 @@ namespace AppBancaMutual.Service
         {
             switch (pageName)
             {
-                case "PersonafrmPage":
-                //await Application.Current.MainPage.Navigation.PushAsync(
-                //    new PersonafrmPage());
-                //break;
-                case "LoginFacebookView":
+                case "RegistroPersonaPage":
+                    await Application.Current.MainPage.Navigation.PushAsync(
+                        new RegistroPersonaPage());
+                    break;
+                case "LoginPage":
                     await Application.Current.MainPage.Navigation.PushAsync(
                         new LoginPage());
                     break;

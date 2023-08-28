@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppBancaMutual.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace AppBancaMutual.Views
         public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private async void LoginButtonClick(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HomeTabbedPage());
         }
     }
 }

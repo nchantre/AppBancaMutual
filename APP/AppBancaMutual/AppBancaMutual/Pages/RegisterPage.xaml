@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AppBancaMutual.Pages.RegisterPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:renderer="clr-namespace:AppBancaMutual.Renderers;"
+    xmlns:sharedTransitions="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
+    NavigationPage.HasNavigationBar="False"
+    Visual="Material">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout
+                AbsoluteLayout.LayoutBounds="0,0,1,.5"
+                AbsoluteLayout.LayoutFlags="All"
+                BackgroundColor="{StaticResource MainColor}" />
+            <StackLayout AbsoluteLayout.LayoutBounds=".5,.1,.5,.3" AbsoluteLayout.LayoutFlags="All">
+                <Image
+                    sharedTransitions:Transition.Name="Logo"
+                    BackgroundColor="Transparent"
+                    HeightRequest="100"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="logo"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="100" />
+                <Label
+                    FontFamily="{StaticResource PingFangBold}"
+                    FontSize="25"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="Register"
+                    TextColor="White" />
+            </StackLayout>
+            <ScrollView AbsoluteLayout.LayoutBounds="1,1,1,.6" AbsoluteLayout.LayoutFlags="All">
+                <pancakeView:PancakeView
+                    x:Name="RegisterLayout"
+                    Margin="10,0,10,0"
+                    Padding="25"
+                    BackgroundColor="White"
+                    CornerRadius="35,35,0,0   "
+                    TranslationY="800"
+                    VerticalOptions="EndAndExpand">
+
+                    <StackLayout>
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="E-Mail"
+                            TextColor="{StaticResource DarkFontColor}" />
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <renderer:BorderlessEntry TextColor="{StaticResource DarkFontColor}" />
+                        </Frame>
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Password"
+                            TextColor="{StaticResource DarkFontColor}" />
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <renderer:BorderlessEntry IsPassword="True" TextColor="{StaticResource DarkFontColor}" />
+                        </Frame>
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Password Confirm"
+                            TextColor="{StaticResource DarkFontColor}" />
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <renderer:BorderlessEntry IsPassword="True" TextColor="{StaticResource DarkFontColor}" />
+                        </Frame>
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Birtday"
+                            TextColor="{StaticResource DarkFontColor}" />
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <renderer:BorderlessDatePicker
+                                FontFamily="{StaticResource PingFangRegular}"
+                                FontSize="15"
+                                TextColor="{StaticResource DarkFontColor}" />
+                        </Frame>
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Address"
+                            TextColor="{StaticResource DarkFontColor}" />
+                        <Frame HeightRequest="100" Style="{StaticResource FrameStyle}">
+                            <renderer:BorderlessEditor BackgroundColor="Transparent" TextColor="{StaticResource DarkFontColor}" />
+                        </Frame>
+                        <Button
+                            Margin="50,10,50,10"
+                            BackgroundColor="{StaticResource MainColor}"
+                            BorderColor="{StaticResource MainColor}"
+                            BorderWidth="2"
+                            Clicked="RegisteruButtonClick"
+                            CornerRadius="30"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="20"
+                            HeightRequest="57"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Register"
+                            TextColor="White"
+                            WidthRequest="227" />
+
+                    </StackLayout>
+                </pancakeView:PancakeView>
+            </ScrollView>
+        </AbsoluteLayout>
+
+    </ContentPage.Content>
+</ContentPage>
