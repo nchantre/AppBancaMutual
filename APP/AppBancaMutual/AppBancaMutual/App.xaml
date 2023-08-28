@@ -55,12 +55,7 @@
                 <Setter Property="BackgroundColor" Value="#D1D1D1" />
             </Style>
 
-            <Style x:Key="IconViewStyle" TargetType="customControl:IconView">
-                <Setter Property="Foreground" Value="{StaticResource MainColor}" />
-                <Setter Property="HeightRequest" Value="30" />
-                <Setter Property="WidthRequest" Value="30" />
-                <Setter Property="Margin" Value="20,0,0,0" />
-            </Style>
+         
             <Style x:Key="ProfleLabelStyle" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource PingFangRegular}" />
                 <Setter Property="FontSize" Value="15" />
