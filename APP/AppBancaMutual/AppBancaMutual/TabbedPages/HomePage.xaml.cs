@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Forms.Xaml;
 
-using AppBancaMutual.Pages;
+
 
 namespace AppBancaMutual.TabbedPages
 {

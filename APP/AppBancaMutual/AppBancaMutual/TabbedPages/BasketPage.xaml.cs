@@ -10,7 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using AppBancaMutual.ModalPages;
-using AppBancaMutual.Pages;
+
 using AppBancaMutual.Models;
 
 namespace AppBancaMutual.TabbedPages
