@@ -16,7 +16,7 @@
             <Color x:Key="MainColor">#3A084B</Color>
             <Color x:Key="Primary">#E5E9EE</Color>
             <Color x:Key="PrimaryDark">#BA2140</Color>
-            <Color x:Key="GradiendEndColor">#866e9c</Color>
+            <Color x:Key="GradiendEndColor">#E5E9EE</Color>
             <Color x:Key="DarkFontColor">#252525</Color>
             <Color x:Key="Secondary">#B5BBC2</Color>
             <Color x:Key="Accent">LightGray</Color>

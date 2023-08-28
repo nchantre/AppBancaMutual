@@ -54,8 +54,8 @@ namespace AppBancaMutual.ViewModels
 
             MyMenu.Add(new MenuViewModel
             {
-                Icon = "ic_info",
-                PageName = "AlarmaPage",
+                Icon = "ic_home",
+                PageName = "RegistroPage",
                 Title = "Inicio",
             });
 
@@ -74,7 +74,7 @@ namespace AppBancaMutual.ViewModels
             });
             MyMenu.Add(new MenuViewModel
             {
-                Icon = "ic_exit_to_app",
+                Icon = "ic_cancel",
                 PageName = "LoginPage",
                 Title = "Salir",
             });

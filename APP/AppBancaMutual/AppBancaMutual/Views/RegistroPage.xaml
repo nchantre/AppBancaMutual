@@ -280,8 +280,43 @@
                         <StackLayout />
 
                     </StackLayout>
-   
-                  
+                    <Button  Text="Contacto" 
+                         IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                         Command="{Binding RegisterWhatsAppCommand}"
+                         BorderColor="#2b3c3c" 
+                         BorderWidth="1" 
+                         FontAttributes="Bold" 
+                         BackgroundColor="#4ba862" 
+                         BorderRadius="35" 
+                          FontSize="6"
+                         TextColor="White"
+                         HorizontalOptions="End" 
+                         WidthRequest="55" 
+                         HeightRequest="55" 
+                         Margin="0,0,30,0" 
+                         VerticalOptions="End"/>
+                    <Label
+                       Margin="20,0,00,0" >
+                        <Label.FormattedText
+                              >
+                            <FormattedString>
+
+                                <Span Text="Registro"
+                                          FontFamily="{StaticResource PingFangRegular}"
+                                            FontSize="16"
+                                       
+                                           TextColor="#D48C24"
+                                          TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://learn.microsoft.com/xamarin/" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
 
                     <Button 
                      
@@ -297,11 +332,18 @@
                         Text="Informacion Cuenta"
                         TextColor="White"
                         WidthRequest="227" />
+                    
+                    
+
+
 
 
                 </StackLayout>
             </ScrollView>
+           
+            
         </StackLayout>
+        
     
 
 

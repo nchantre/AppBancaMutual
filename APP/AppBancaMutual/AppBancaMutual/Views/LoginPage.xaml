@@ -107,8 +107,45 @@
                     VerticalOptions="CenterAndExpand">
 
                     </ActivityIndicator>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                              
+                                <Span Text="Registro"
+                                          FontFamily="{StaticResource PingFangRegular}"
+                                        FontSize="16"
+                  TextColor="#D48C24"
+                  TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding UrlCommand}"
+                                          CommandParameter="https://docs.google.com/forms/d/1c24lEK6a8YPK21kIHNUIHc1dnZ8cps2zvcWEgPt8uXw/viewform?edit_requested=true" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                             
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
                 </StackLayout>
             </yummy:PancakeView>
+
+         
+                   
+            <Button  Text="Contacto" 
+                     IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                     Command="{Binding RegisterWhatsAppCommand}"
+                     BorderColor="#2b3c3c" 
+                     BorderWidth="0" 
+                     FontAttributes="Bold" 
+                     BackgroundColor="#4ba862" 
+                     BorderRadius="35" 
+                      FontSize="6"
+                     TextColor="White"
+                     HorizontalOptions="End" 
+                     WidthRequest="55" 
+                     HeightRequest="55" 
+                     Margin="300,650,0,0" 
+                     VerticalOptions="End"/>
+
 
         </AbsoluteLayout>
 
