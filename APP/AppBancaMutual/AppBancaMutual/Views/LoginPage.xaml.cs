@@ -20,7 +20,7 @@ namespace AppBancaMutual.Views
 
         private async void LoginButtonClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HomeTabbedPage());
+           // await Navigation.PushAsync(new HomeTabbedPage());
         }
     }
 }

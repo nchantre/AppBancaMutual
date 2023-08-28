@@ -58,8 +58,8 @@ namespace AppBancaMutual.ViewModels
             this.IsRemembered = true;
 
 
-            //this.Email = "User";
-            //this.Password = "123";
+            this.Email = "User";
+            this.Password = "123";
             navigationService = new NavigationService();
 
         }
