@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v13.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -104,7 +103,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AppBancaMutual\AppBancaMutual.csproj">
-      <Project>{5630C5AB-8F63-4430-AC74-EC1EE92F0328}</Project>
+      <Project>{4FC6D604-48F9-4A18-BE75-2FD3C49C9189}</Project>
       <Name>AppBancaMutual</Name>
     </ProjectReference>
   </ItemGroup>
