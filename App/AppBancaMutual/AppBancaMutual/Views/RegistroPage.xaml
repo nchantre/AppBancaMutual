@@ -316,22 +316,24 @@
                     </Label>
 
 
+
                     <Button 
-                     
-                        Margin="50,10,50,10"
-                        BackgroundColor="#D48C24"
-                        BorderColor="#D48C24"
-                        BorderWidth="2"
-                        CornerRadius="30"
-                        FontFamily="{StaticResource PingFangRegular}"
-                        FontSize="12"
-                        HeightRequest="40"
-                        HorizontalOptions="CenterAndExpand"
-                        Text="Informacion Cuenta"
-                        TextColor="White"
-                        WidthRequest="227" />
-                    
-                    
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Command="{Binding CancelarCommand}"
+                            Margin="50,10,50,10"
+                            BackgroundColor="#D48C24"
+                            BorderColor="#D48C24"
+                            BorderWidth="2"
+                            CornerRadius="30"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="12"
+                            HeightRequest="57"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Informacion Cuenta"
+                            TextColor="White"
+                            WidthRequest="227" />
+
+
 
 
 
