@@ -19,6 +19,7 @@
                 <Grid>
 
                     <Image 
+                        HeightRequest="140"
                     BackgroundColor="Transparent"
                     HorizontalOptions="CenterAndExpand"            
                     VerticalOptions="CenterAndExpand"

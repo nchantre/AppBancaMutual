@@ -6,6 +6,7 @@
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
              xmlns:pages="clr-namespace:AppBancaMutual.Views"
              Title="master app"
+                     BackgroundColor="White"
              mc:Ignorable="d"           
              x:Class="AppBancaMutual.Views.MasterPage">
     <MasterDetailPage.Master >

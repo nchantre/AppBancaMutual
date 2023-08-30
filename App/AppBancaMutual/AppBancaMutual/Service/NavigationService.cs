@@ -23,30 +23,28 @@ namespace AppBancaMutual.Service
 
         public async Task NavigateOnMaster(string pageName)
         {
-            //App.Master.IsPresented = false;
+            App.Master.IsPresented = false;
 
-            //switch (pageName)
-            //{
-            //    case "FrmunoPage":
-            //        await App.Navigator.PushAsync(
-            //            new FrmunoPage());
-            //        break;
-            //    case "FrmdosPage":
-            //        await App.Navigator.PushAsync(
-            //            new FrmdosPage());
-            //        break;
-            //    case "RecomendacionPage":
-            //        await App.Navigator.PushAsync(
-            //            new RecomendacionPage());
-            //        break;
+            switch (pageName)
+            {
+                case "RegistroPage":
+                    await App.Navigator.PushAsync(
+                        new RegistroPage());
+                    break;
+                case "ActualizarInformacionClientePage":
+                    await App.Navigator.PushAsync(
+                        new ActualizarInformacionClientePage());
+                    break;
+            
 
-            //}
+            }
         }
 
         public async Task NavigateOnLogin(string pageName)
         {
             switch (pageName)
             {
+                
                 case "RegistroPersonaPage":
                     await Application.Current.MainPage.Navigation.PushAsync(
                         new RegistroPersonaPage());

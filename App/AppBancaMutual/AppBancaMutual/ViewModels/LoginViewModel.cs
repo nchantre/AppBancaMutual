@@ -161,21 +161,10 @@ namespace AppBancaMutual.ViewModels
 
         }
 
-        private async void RegisterWhatsAppCommands()
+        private  void RegisterWhatsAppCommands()
         {
-            //var answer = await Application.Current.MainPage.DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
-            //Debug.WriteLine("Answer: " + (answer ? "Yes" : "No"));
-
-
-
-            //await Application.Current.MainPage.DisplayAlert(
-            //        "Error",
-            //        "Ingresar el usuario",
-            //        "Accept");
-
-            //para Tener en cuenta para Instaciamiento formularios
-            MainViewModel.GetInstance().registroPersonaViewModel = new RegistroPersonaViewModel();
-            await navigationService.NavigateOnLogin("RegistroPersonaPage");
+       
+    
 
             string CodigoPaisCelular;
             CodigoPaisCelular = "+573207550469";
@@ -187,7 +176,7 @@ namespace AppBancaMutual.ViewModels
         {
             //var answer = await Application.Current.MainPage.DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
             //Debug.WriteLine("Answer: " + (answer ? "Yes" : "No"));
-            var url =  "https://docs.google.com/forms/d/1c24lEK6a8YPK21kIHNUIHc1dnZ8cps2zvcWEgPt8uXw/viewform?edit_requested=true";
+            var url =   "https://docs.google.com/forms/d/1c24lEK6a8YPK21kIHNUIHc1dnZ8cps2zvcWEgPt8uXw/viewform?edit_requested=true";
             Device.OpenUri(new Uri(url));
             
 
@@ -201,46 +190,12 @@ namespace AppBancaMutual.ViewModels
 
         }
 
-        //private async void ShowCustomDialogButton_Clicked(object sender, EventArgs e)
-        //{
-        //    var customDialog = new CustomDialogPage();
-        //    await Navigation.PushModalAsync(customDialog);
-        //}
-
+ 
         #endregion
 
 
 
 
     }
-    //public class CustomDialogPage : ContentPage
-    //{
-    //    public CustomDialogPage()
-    //    {
-    //        var messageLabel = new Label
-    //        {
-    //            Text = "Este es un cuadro de diálogo personalizado.",
-    //            HorizontalOptions = LayoutOptions.CenterAndExpand,
-    //            VerticalOptions = LayoutOptions.CenterAndExpand
-    //        };
 
-    //        var closeButton = new Button
-    //        {
-    //            Text = "Cerrar",
-    //            BackgroundColor = Color.Blue, // Cambiar el color de fondo del botón
-    //            TextColor = Color.White // Cambiar el color del texto del botón
-    //        };
-
-    //        closeButton.Clicked += async (sender, args) =>
-    //        {
-    //            await Navigation.PopModalAsync();
-    //        };
-
-    //        Content = new StackLayout
-    //        {
-    //            Children = { messageLabel, closeButton },
-    //            Padding = new Thickness(20)
-    //        };
-    //    }
-    //}
 }

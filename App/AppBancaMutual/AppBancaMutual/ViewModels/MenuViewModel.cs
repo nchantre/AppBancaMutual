@@ -1,4 +1,5 @@
 ﻿using AppBancaMutual.Service;
+using AppBancaMutual.Views;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.Windows.Input;
@@ -42,10 +43,16 @@ namespace AppBancaMutual.ViewModels
                      mainViewModel.Login = new LoginViewModel();
                     navigationService.SetMainPage(PageName);
                     break;
-                case "RecomendacionPage":
-                   // MainViewModel.GetInstance().Recomendacion = new RecomendacionViewModel();
+                case "ActualizarInformacionClientePage":
+                    MainViewModel.GetInstance().actualizarInformacionClienteViewModel = new ActualizarInformacionClienteViewModel();
                     await navigationService.NavigateOnMaster(PageName);
                     break;
+                case "RegistroPage":
+                    MainViewModel.GetInstance().Registro = new RegistroViewModel();
+                    await navigationService.NavigateOnMaster(PageName);
+                    break;
+
+                    
                 case "AlarmaPage":
                     //MainViewModel.GetInstance().Sync = new SyncViewModel();
                     await navigationService.NavigateOnMaster(PageName);

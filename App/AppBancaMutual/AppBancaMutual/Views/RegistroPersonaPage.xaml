@@ -35,12 +35,12 @@
                     FontFamily="{StaticResource PingFangBold}"
                     FontSize="25"
                     HorizontalOptions="CenterAndExpand"
-                    Text="Register"
+                    Text="Registro"
                     TextColor="White" />
             </StackLayout>
             <ScrollView AbsoluteLayout.LayoutBounds="1,1,1,.6" AbsoluteLayout.LayoutFlags="All">
                 <yummy:PancakeView
-                    Margin="10,0,10,0"
+                    Margin="0,0,0,0"
                     Padding="25"
                     AbsoluteLayout.LayoutBounds="1,1,1,1"
                     AbsoluteLayout.LayoutFlags="All"

@@ -12,6 +12,7 @@ namespace AppBancaMutual.ViewModels
         public LoginViewModel Login { get; set; }
 
         public RegistroPersonaViewModel registroPersonaViewModel { get; set; }
+        public ActualizarInformacionClienteViewModel actualizarInformacionClienteViewModel { get; set; }
         //public HabeasdataViewModel Habeasdata { get; set; }
         public RegistroViewModel Registro { get; set; }
         //public FrmunoViewModel Frmuno { get; set; }
@@ -62,16 +63,11 @@ namespace AppBancaMutual.ViewModels
             MyMenu.Add(new MenuViewModel
             {
                 Icon = "ic_assignment",
-                PageName = "RecomendacionPage",
-                Title = "Estado Cuenta",
+                PageName = "ActualizarInformacionClientePage",
+                Title = "Actualizacion Cliente",
             });
 
-            MyMenu.Add(new MenuViewModel
-            {
-                Icon = "ic_assignment",
-                PageName = "RecomendacionPage",
-                Title = "Servicios Activos",
-            });
+       
             MyMenu.Add(new MenuViewModel
             {
                 Icon = "ic_cancel",

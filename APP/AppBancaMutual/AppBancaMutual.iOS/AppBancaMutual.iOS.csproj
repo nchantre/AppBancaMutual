@@ -131,6 +131,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.8.0" />
+    <PackageReference Include="Xamarin.Forms.OpenWhatsApp">
+      <Version>1.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -138,5 +141,155 @@
       <Project>{5630C5AB-8F63-4430-AC74-EC1EE92F0328}</Project>
       <Name>AppBancaMutual</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\addNewCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\backGray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\commetsProfile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\creditCardIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-Portrait%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\emptystar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\favFill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\fillstar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\halfemptystar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\HomeClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_assignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_chevron_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_launcher.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logOut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\myOrdersIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\passIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\profile07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ProfileClick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\qr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scissors.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\slideout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\w.png" />
   </ItemGroup>
 </Project>
