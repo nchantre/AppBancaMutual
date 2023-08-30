@@ -134,8 +134,9 @@ namespace AppBancaMutual.ViewModels
             //    // DocumentoHabeasData = result.DocumentoHabeasData;
             //}
 
-          //  MainViewModel.GetInstance().Habeasdata = new HabeasdataViewModel();
-           // MainViewModel.GetInstance().Registro = new RegistroViewModel();
+            //  MainViewModel.GetInstance().Habeasdata = new HabeasdataViewModel();
+            // MainViewModel.GetInstance().Registro = new RegistroViewModel();
+            MainViewModel.GetInstance().Registro = new RegistroViewModel();                                                                         
             navigationService.SetMainPage("MasterPage");
 
 

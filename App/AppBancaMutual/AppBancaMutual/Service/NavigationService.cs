@@ -18,6 +18,8 @@ namespace AppBancaMutual.Service
                     Application.Current.MainPage = new MasterPage();
                     break;
 
+       
+
             }
         }
 
@@ -35,7 +37,24 @@ namespace AppBancaMutual.Service
                     await App.Navigator.PushAsync(
                         new ActualizarInformacionClientePage());
                     break;
-            
+                case "SolicitarPrestamoPage":
+                    await App.Navigator.PushAsync(
+                        new SolicitarPrestamoPage());
+                    break;
+                case "EstadoPrestamoPage":
+                    await App.Navigator.PushAsync(
+                        new EstadoPrestamoPage());
+                    break;
+                case "PagosPage":
+                    await App.Navigator.PushAsync(
+                        new PagosPage());
+                    break;
+                    
+
+                case "ProductosAdquiridosPage":
+                    await App.Navigator.PushAsync(
+                        new ProductosAdquiridosPage());
+                    break;
 
             }
         }

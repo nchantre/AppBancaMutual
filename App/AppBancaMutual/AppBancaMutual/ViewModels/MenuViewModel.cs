@@ -47,12 +47,20 @@ namespace AppBancaMutual.ViewModels
                     MainViewModel.GetInstance().actualizarInformacionClienteViewModel = new ActualizarInformacionClienteViewModel();
                     await navigationService.NavigateOnMaster(PageName);
                     break;
+                case "ProductosAdquiridosPage":
+                    MainViewModel.GetInstance().productosAdquiridosViewModel = new ProductosAdquiridosViewModel();
+                    await navigationService.NavigateOnMaster(PageName);
+                    break;
                 case "RegistroPage":
                     MainViewModel.GetInstance().Registro = new RegistroViewModel();
                     await navigationService.NavigateOnMaster(PageName);
                     break;
+                case "SolicitarPrestamoPage":
+                    MainViewModel.GetInstance().solicitarPrestamoViewModel = new SolicitarPrestamoViewModel();
+                    await navigationService.NavigateOnMaster(PageName);
+                    break;
 
-                    
+
                 case "AlarmaPage":
                     //MainViewModel.GetInstance().Sync = new SyncViewModel();
                     await navigationService.NavigateOnMaster(PageName);

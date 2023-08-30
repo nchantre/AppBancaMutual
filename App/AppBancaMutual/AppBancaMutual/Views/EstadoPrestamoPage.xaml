@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:renderers="clr-namespace:AppBancaMutual.Renderers;assembly=AppBancaMutual"
+          
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="White"
+             Visual="Material"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}"
+             mc:Ignorable="d"           
+             Title="Estado Prestamo"
+             x:Class="AppBancaMutual.Views.EstadoPrestamoPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0"
+                     BindingContext="{Binding estadoPrestamoViewModel}">
+            <StackLayout Spacing="0">
+                <StackLayout
+                    Margin="0,25,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="70"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Label
+                        Margin=" 36,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Estado del Prestamo"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center" />
+
+                </StackLayout>
+                <StackLayout
+                    x:Name="NavbarStack"
+                    BackgroundColor="White"
+                    IsVisible="False"
+                    Orientation="Horizontal"
+                    VerticalOptions="Start">
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="11"
+                            Text="Braun7787878787"
+                            TextColor="#917A7A" />
+                    </StackLayout>
+                    <Label
+                        Margin="0,0,10,0"
+                        FontAttributes="Bold"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="30"
+                        HorizontalOptions="EndAndExpand"
+                        Text="$149.99"
+                        TextColor="{StaticResource MainColor}"
+                        VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            </StackLayout>
+
+
+
+            <pancakeView:PancakeView
+                        Margin="10,0,10,10"
+                        Padding="10"
+                        BackgroundColor="White"
+                        >
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+       
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            <Label
+                                        FontFamily="{StaticResource PingFangRegular}"
+                                        FontSize="12"
+                                        Text="Fecha"
+                                        TextColor="#252525" />
+                            <Label
+                                        FontFamily="{StaticResource PingFangRegular}"
+                                        FontSize="10"
+                                        Text="28/08/2023"
+                                        TextColor="DarkGray" />
+                        </StackLayout>
+                    </StackLayout>
+                    <Label
+                                FontFamily="{StaticResource PingFangRegular}"
+                                FontSize="15"
+                                Text="Banca Mutual es una asociación mutual que se especializa en microcréditos, préstamos y seguros con el objetivo de ofrecer créditos blandos y seguros colectivos. Además, su enfoque se basa en el concepto de la ayuda mutua y la solidaridad."
+                                TextColor="DarkGray" />
+                </StackLayout>
+            </pancakeView:PancakeView>
+            <ScrollView x:Name="MainScroll">
+                <StackLayout Margin="0,0,0,15" Spacing="10">
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout Margin="10,0,0,0">
+                            <Label
+                                FontFamily="{StaticResource PingFangMedium}"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                Text="Estado"
+                                TextColor="#2E2E2E"
+                                VerticalOptions="Start"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="25"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Pendiente"
+                            TextColor="{StaticResource MainColor}"
+                            VerticalOptions="StartAndExpand" />
+                    </StackLayout>
+                 
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout Margin="10,0,0,0">
+                            <Label
+                                FontFamily="{StaticResource PingFangMedium}"
+                                FontSize="15"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                Text="Numero de Cuenta"
+                                TextColor="#2E2E2E"
+                                VerticalOptions="Start"
+                                VerticalTextAlignment="Center" />
+
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="20"
+                            HorizontalOptions="EndAndExpand"
+                            Text="9235-5689-**"
+                            TextColor="{StaticResource MainColor}"
+                            VerticalOptions="StartAndExpand" />
+                    </StackLayout>
+
+                    <ScrollView
+                        Margin="10,0,10,0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+             
+                    </ScrollView>
+               
+       
+             
+     
+
+
+
+                    <Button 
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Command="{Binding PagoCommand}"
+                            Margin="50,10,50,10"
+                            BackgroundColor="#D48C24"
+                            BorderColor="#D48C24"
+                            BorderWidth="2"
+                            CornerRadius="30"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="12"
+                            HeightRequest="57"
+                            HorizontalOptions="CenterAndExpand"
+                            Text=" Estado del Pago"
+                            TextColor="White"
+                            WidthRequest="227" />
+
+
+
+
+
+
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,4 +1,6 @@
 ﻿
+using AppBancaMutual.Service;
+using AppBancaMutual.Views;
 using GalaSoft.MvvmLight.Command;
 using System;
 using System.ComponentModel;
@@ -11,6 +13,10 @@ namespace AppBancaMutual.ViewModels
 {
     public class RegistroViewModel : BaseViewModel
     {
+        #region Services
+        public NavigationService navigationService;
+        #endregion
+
         #region Attributes
         private string ubicacion_Categoria;
         private string codigo;
@@ -32,6 +38,7 @@ namespace AppBancaMutual.ViewModels
             set { SetValue(ref this.codigo, value); }
 
         }
+        public bool IsRemembered { get; set; }
 
         public string Cantidad
         {
@@ -51,10 +58,9 @@ namespace AppBancaMutual.ViewModels
         #region Constructor
         public RegistroViewModel()
         {
-            this.Ubicacion_Categoria = "tecnologia";
-            this.Codigo = "8590809";
-            this.Cantidad = "45";
-            ButtonCommand = new Command(OnButtomCommand);
+            this.IsRemembered = true;
+
+            navigationService = new NavigationService();
         }
         #endregion
 
@@ -65,6 +71,15 @@ namespace AppBancaMutual.ViewModels
         //#######################################
         public ICommand RegistroCommand => new RelayCommand(RegistroCommands);
         public ICommand EscanerCommand => new RelayCommand(EscanerCommands);
+
+        public ICommand PrestamoCommand => new RelayCommand(PrestamoCommands);
+
+        public ICommand EstadoPrestamoCommand => new RelayCommand(EstadoPrestamoCommands);
+
+
+        public ICommand PagoCommand => new RelayCommand(PagoCommans);
+        
+
         //#######################################
         #endregion
 
@@ -117,6 +132,37 @@ namespace AppBancaMutual.ViewModels
 
         }
 
+
+
+        private async void PrestamoCommands()
+        {
+
+            MainViewModel.GetInstance().solicitarPrestamoViewModel = new SolicitarPrestamoViewModel();
+            await navigationService.NavigateOnMaster("SolicitarPrestamoPage");
+
+
+     
+
+
+        }
+
+        private async void EstadoPrestamoCommands()
+        {
+
+            MainViewModel.GetInstance().estadoPrestamoViewModel = new EstadoPrestamoViewModel();
+            await navigationService.NavigateOnMaster("EstadoPrestamoPage");
+
+        }
+
+
+        private async void PagoCommans()
+        {
+
+            MainViewModel.GetInstance().pagoViewModel = new PagoViewModel();
+            await navigationService.NavigateOnMaster("PagosPage");
+
+        }
+
         private async void EscanerCommands()
         {
             //string nombre = "uno.txt";
@@ -141,6 +187,8 @@ namespace AppBancaMutual.ViewModels
                        "Error",
                        "Registro Exitoso",
                        "Aceptar");
+
+        
 
 
         }

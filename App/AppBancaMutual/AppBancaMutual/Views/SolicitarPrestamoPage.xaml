@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:renderers="clr-namespace:AppBancaMutual.Renderers;assembly=AppBancaMutual"
+          
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="White"
+             Visual="Material"
+             BindingContext="{Binding Main,Source={StaticResource Locator}}"
+             mc:Ignorable="d"           
+             Title="Prestamo"
+             
+             x:Class="AppBancaMutual.Views.SolicitarPrestamoPage">
+    <ContentPage.Content>
+        <StackLayout Spacing="0"
+                     BindingContext="{Binding solicitarPrestamoViewModel}">
+            <StackLayout
+                    Margin="0,25,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="70"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                <Label
+                        Margin=" 36,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Solicitar Prestamo"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center" />
+
+            </StackLayout>
+            <pancakeView:PancakeView
+                        Margin="10,0,10,10"
+                        Padding="10"
+                        BackgroundColor="White"
+                        >
+
+            </pancakeView:PancakeView>
+            <ScrollView x:Name="MainScroll">
+                <StackLayout Margin="0,0,0,15" Spacing="10">
+
+                    <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Nombre Completo"
+                            TextColor="{StaticResource DarkFontColor}" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <renderers:BorderlessEntry TextColor="{StaticResource DarkFontColor}" />
+                    </Frame>
+                    <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Cantidad a Prestar"
+                            TextColor="{StaticResource DarkFontColor}" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <renderers:BorderlessEntry TextColor="{StaticResource DarkFontColor}" />
+                    </Frame>
+
+                    <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Fecha prestamo"
+                            TextColor="{StaticResource DarkFontColor}" />
+                    <Frame Style="{StaticResource FrameStyle}">
+                        <renderers:BorderlessEntry TextColor="{StaticResource DarkFontColor}" />
+                    </Frame>
+
+
+
+
+
+
+                    <ScrollView
+                        Margin="10,0,10,0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+
+                    </ScrollView>
+                    <StackLayout >
+
+                        <Button
+                            BackgroundColor="{StaticResource MainColor}"
+                            CornerRadius="{x:OnPlatform Android=30,
+                                                        iOS=23}"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="12"
+                            HeightRequest="57"
+                                Margin="50,10,50,10"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Realizar Proceso"
+                            TextColor="White"
+                            WidthRequest="210" />
+                        <Button
+                            BackgroundColor="#D48C24"
+                            BorderColor="#D48C24"
+                            CornerRadius="{x:OnPlatform Android=30,
+                                                        iOS=23}"
+                              Margin="50,10,50,10"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="12"
+                            HeightRequest="57"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="Cancelar"
+                            TextColor="White"
+                            WidthRequest="227" />
+
+
+
+
+                    </StackLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+                </StackLayout>
+            </ScrollView>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

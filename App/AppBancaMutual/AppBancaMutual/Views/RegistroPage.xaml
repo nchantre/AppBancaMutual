@@ -242,6 +242,8 @@
                             FontFamily="{StaticResource PingFangMedium}"
                             FontSize="12"
                             HeightRequest="46"
+                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Command="{Binding PrestamoCommand}"
                             HorizontalOptions="FillAndExpand"
                             Text="solicitar Prestamo"
                             TextColor="White"
@@ -251,10 +253,12 @@
                             CornerRadius="{x:OnPlatform Android=30,
                                                         iOS=23}"
                             FontFamily="{StaticResource PingFangMedium}"
-                            FontSize="12"
+                            FontSize="11"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Command="{Binding EstadoPrestamoCommand}"
                             HeightRequest="46"
                             HorizontalOptions="FillAndExpand"
-                            Text="Detalle Productos"
+                            Text="Estado del Prestamo"
                             TextColor="White"
                             WidthRequest="100" />
                     </StackLayout>
@@ -319,7 +323,7 @@
 
                     <Button 
                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                            Command="{Binding CancelarCommand}"
+                            Command="{Binding PagoCommand}"
                             Margin="50,10,50,10"
                             BackgroundColor="#D48C24"
                             BorderColor="#D48C24"
@@ -329,7 +333,7 @@
                             FontSize="12"
                             HeightRequest="57"
                             HorizontalOptions="CenterAndExpand"
-                            Text="Informacion Cuenta"
+                            Text="Pagos"
                             TextColor="White"
                             WidthRequest="227" />
 

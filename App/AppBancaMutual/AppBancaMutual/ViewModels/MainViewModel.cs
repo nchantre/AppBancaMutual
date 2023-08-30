@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppBancaMutual.Views;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -13,6 +14,15 @@ namespace AppBancaMutual.ViewModels
 
         public RegistroPersonaViewModel registroPersonaViewModel { get; set; }
         public ActualizarInformacionClienteViewModel actualizarInformacionClienteViewModel { get; set; }
+
+        public ProductosAdquiridosViewModel productosAdquiridosViewModel { get; set; }
+
+        public SolicitarPrestamoViewModel solicitarPrestamoViewModel { get; set; }
+
+        public EstadoPrestamoViewModel estadoPrestamoViewModel { get; set; }
+
+        public PagoViewModel pagoViewModel { get; set; }
+
         //public HabeasdataViewModel Habeasdata { get; set; }
         public RegistroViewModel Registro { get; set; }
         //public FrmunoViewModel Frmuno { get; set; }
@@ -66,8 +76,14 @@ namespace AppBancaMutual.ViewModels
                 PageName = "ActualizarInformacionClientePage",
                 Title = "Actualizacion Cliente",
             });
+            MyMenu.Add(new MenuViewModel
+            {
+                Icon = "ic_assignment",
+                PageName = "ProductosAdquiridosPage",
+                Title = "Productos Adquiridos",
+            });
 
-       
+
             MyMenu.Add(new MenuViewModel
             {
                 Icon = "ic_cancel",
