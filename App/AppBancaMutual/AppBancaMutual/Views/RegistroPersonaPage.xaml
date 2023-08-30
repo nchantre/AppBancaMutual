@@ -52,18 +52,32 @@
                         <Label
                             FontFamily="{StaticResource PingFangRegular}"
                             FontSize="15"
-                            Text="Nombre Completo"
+                            Text="nombres"
                             TextColor="{StaticResource DarkFontColor}" />
                         <Frame Style="{StaticResource FrameStyle}">
-                            <renderer:BorderlessEntry TextColor="{StaticResource DarkFontColor}" />
+                            <renderer:BorderlessEntry
+                                Text="{Binding Nombres, Mode=TwoWay}"
+                                TextColor="{StaticResource DarkFontColor}" />
                         </Frame>
                         <Label
                             FontFamily="{StaticResource PingFangRegular}"
                             FontSize="15"
-                            Text="Cedula"
+                            Text="Apellidos"
                             TextColor="{StaticResource DarkFontColor}" />
                         <Frame Style="{StaticResource FrameStyle}">
-                            <renderer:BorderlessEntry IsPassword="True" TextColor="{StaticResource DarkFontColor}" />
+                            <renderer:BorderlessEntry
+                                  Text="{Binding Apellidos, Mode=TwoWay}"
+                                TextColor="{StaticResource DarkFontColor}" />
+                        </Frame>
+                        <Label
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="15"
+                            Text="Documento"
+                            TextColor="{StaticResource DarkFontColor}" />
+                        <Frame Style="{StaticResource FrameStyle}">
+                            <renderer:BorderlessEntry
+                                 Text="{Binding Documento, Mode=TwoWay}"
+                               TextColor="{StaticResource DarkFontColor}" />
                         </Frame>
                         <Label
                             FontFamily="{StaticResource PingFangRegular}"
@@ -71,15 +85,19 @@
                             Text="E-mail"
                             TextColor="{StaticResource DarkFontColor}" />
                         <Frame Style="{StaticResource FrameStyle}">
-                            <renderer:BorderlessEntry IsPassword="True" TextColor="{StaticResource DarkFontColor}" />
+                            <renderer:BorderlessEntry
+                                Text="{Binding Email, Mode=TwoWay}"
+                                 TextColor="{StaticResource DarkFontColor}" />
                         </Frame>
                         <Label
                             FontFamily="{StaticResource PingFangRegular}"
                             FontSize="15"
-                            Text="Password Confirm"
+                            Text="Celular"
                             TextColor="{StaticResource DarkFontColor}" />
                         <Frame Style="{StaticResource FrameStyle}">
-                            <renderer:BorderlessEntry IsPassword="True" TextColor="{StaticResource DarkFontColor}" />
+                            <renderer:BorderlessEntry 
+                                 Text="{Binding Phone, Mode=TwoWay}"
+                                 TextColor="{StaticResource DarkFontColor}" />
                         </Frame>
                        
                         <Button

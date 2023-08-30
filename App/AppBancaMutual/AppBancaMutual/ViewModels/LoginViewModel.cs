@@ -1,7 +1,12 @@
-﻿using AppBancaMutual.Service;
+﻿using AppBancaMutual.Models;
+using AppBancaMutual.Service;
 using GalaSoft.MvvmLight.Command;
+using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.OpenWhatsApp;
@@ -58,8 +63,8 @@ namespace AppBancaMutual.ViewModels
             this.IsRemembered = true;
 
 
-            this.Email = "User";
-            this.Password = "123";
+            //this.Email = "User";
+            //this.Password = "123";
             navigationService = new NavigationService();
 
         }
@@ -102,42 +107,53 @@ namespace AppBancaMutual.ViewModels
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            //if (this.Email != "liana.pruebas@uniminuto.edu.co" || this.Password != "Colombia2019*")
-            //{
-            //    this.IsRunning = false;
-            //    this.IsEnabled = true;
+            RequestUsuario obj = new RequestUsuario();
+            obj.documentoIdentidad = email;
+            obj.password = password;
 
-            //    await Application.Current.MainPage.DisplayAlert(
-            //        "Error",
-            //        "Email or Password incorrect",
-            //        "Accept");
+            bool respuesta = false;
 
-            //    this.Password = string.Empty;
-            //    this.Email = string.Empty;
-            //    return;
-            //}
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri("https://appservbm.azurewebsites.net");
+            var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+            var response = await cliente.PostAsync("api/Cliente", content);
 
-            //this.IsRunning = false;
-            //this.IsEnabled = true;
+            if (response.IsSuccessStatusCode)
+            {
+                var json_respuesta = await response.Content.ReadAsStringAsync();
+               var rt = JsonConvert.DeserializeObject<ResponseUsuario>(json_respuesta);
+                if (rt.apellido != null)
+                {
+                    MainViewModel.GetInstance().Registro = new RegistroViewModel();
+                    navigationService.SetMainPage("MasterPage");
+                }
+                else
+                {
+                    MainViewModel.GetInstance().Login = new LoginViewModel();
+                    navigationService.NavigateOnLogin("LoginPage");
 
-            //this.Password = string.Empty;
-            //this.Email = string.Empty;
+                    await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Usuario No registrado comuniquese con un asesro",
+                   "Accept");
+                    return;
 
-            //WSClientViewModel client = new WSClientViewModel();
-            //byte[] byt = System.Text.Encoding.UTF8.GetBytes(this.Password);
-            //string passwd = Convert.ToBase64String(byt);
-            //var result = await client.Get<Dominio>("https://zonaestudiantes.uniminuto.edu/ServiciosAPI/API/LDAP/AutenticarUsuario/" + this.Email + "/" + passwd + "/ACTIVOS");
+                }
+            }
+            else
+            {
+                MainViewModel.GetInstance().Login = new LoginViewModel();
+                navigationService.NavigateOnLogin("LoginPage");
 
-            ////Que string URLComplemento = "API/LDAP/AutenticarUsuario/" + pCorreo + "/" + passwd + "/" + pTipousuario;
-            //if (result != null)
-            //{
-            //    // DocumentoHabeasData = result.DocumentoHabeasData;
-            //}
+                await Application.Current.MainPage.DisplayAlert(
+                   "Error",
+                   "Esta Caido El sistema",
+                   "Accept");
+                return;
 
-            //  MainViewModel.GetInstance().Habeasdata = new HabeasdataViewModel();
-            // MainViewModel.GetInstance().Registro = new RegistroViewModel();
-            MainViewModel.GetInstance().Registro = new RegistroViewModel();                                                                         
-            navigationService.SetMainPage("MasterPage");
+            }
+
+          
 
 
 

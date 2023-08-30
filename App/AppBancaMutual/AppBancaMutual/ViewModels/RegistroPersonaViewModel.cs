@@ -1,5 +1,11 @@
-﻿using AppBancaMutual.Service;
+﻿using AppBancaMutual.Models;
+using AppBancaMutual.Renderers;
+using AppBancaMutual.Service;
 using GalaSoft.MvvmLight.Command;
+using Newtonsoft.Json;
+using System;
+using System.Net.Http;
+using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -13,26 +19,67 @@ namespace AppBancaMutual.ViewModels
         #endregion
 
         #region Attributes
-        private string email;
-        private string password;
+    
         private bool isRunning;
         private bool isEnabled;
+
+
+        private int tipoDocumentoId;
+        private string documento;
+        private string nombres;
+        private string apellidos;
+        private string email;
+        private string phone;
+        private DateTime fechaRegistro;
         #endregion
 
-
         #region Properties
+        public int TipoDocumentoId
+        {
+            get { return this.tipoDocumentoId; }
+            set { SetValue(ref this.tipoDocumentoId, value); }
+
+        }
+        public string Documento
+        {
+            get { return this.documento; }
+            set { SetValue(ref this.documento, value); }
+
+        }
+
+        public string Nombres
+        {
+            get { return this.nombres; }
+            set { SetValue(ref this.nombres, value); }
+
+        }
+        public string Apellidos
+        {
+            get { return this.apellidos; }
+            set { SetValue(ref this.apellidos, value); }
+
+        }
+
         public string Email
         {
             get { return this.email; }
             set { SetValue(ref this.email, value); }
 
         }
-        public string Password
+
+        public string Phone
         {
-            get { return this.password; }
-            set { SetValue(ref this.password, value); }
+            get { return this.phone; }
+            set { SetValue(ref this.phone, value); }
 
         }
+        public DateTime FechaRegistro
+        {
+            get { return this.fechaRegistro; }
+            set { SetValue(ref this.fechaRegistro, value); }
+
+        }
+
         public bool IsRemembered { get; set; }
 
         public bool IsRunning
@@ -56,8 +103,7 @@ namespace AppBancaMutual.ViewModels
             this.IsRemembered = true;
 
 
-            this.Email = "User";
-            this.Password = "123";
+ 
             navigationService = new NavigationService();
 
         }
@@ -84,7 +130,7 @@ namespace AppBancaMutual.ViewModels
                     "Accept");
                 return;
             }
-            if (string.IsNullOrEmpty(this.Password))
+            if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
@@ -94,6 +140,52 @@ namespace AppBancaMutual.ViewModels
             }
             this.IsRunning = true;
             this.IsEnabled = false;
+            DateTime thisDay = DateTime.Today;
+            RequestRegistroUsario obj = new RequestRegistroUsario();
+            obj.tipoDocumentoId = "1";
+            obj.documentoIdentidad = Documento;
+            obj.nombre = Nombres;
+            obj.apellido = Apellidos;
+            obj.correo = Email;
+            obj.celular = Phone;
+            obj.fechaRegistro = thisDay;
+
+
+            bool respuesta = false;
+
+            var cliente = new HttpClient();
+            cliente.BaseAddress = new Uri("https://appservbm.azurewebsites.net");
+            var content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+            var response = await cliente.PutAsync("api/Cliente", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var json_respuesta = await response.Content.ReadAsStringAsync();
+    
+     
+                    await Application.Current.MainPage.DisplayAlert(
+                   "Alert",
+                   "El registro fue Exitoso !",
+                   "Accept");
+                MainViewModel.GetInstance().Login = new LoginViewModel();
+                navigationService.NavigateOnLogin("LoginPage");
+                return;
+
+        
+            }
+            else
+            {
+                MainViewModel.GetInstance().Login = new LoginViewModel();
+                navigationService.NavigateOnLogin("LoginPage");
+
+                await Application.Current.MainPage.DisplayAlert(
+                   "Alert",
+                   "Usuario no registrado",
+                   "Accept");
+                return;
+
+            }
+
 
             //if (this.Email != "liana.pruebas@uniminuto.edu.co" || this.Password != "Colombia2019*")
             //{
@@ -129,7 +221,7 @@ namespace AppBancaMutual.ViewModels
 
             //  MainViewModel.GetInstance().Habeasdata = new HabeasdataViewModel();
             // MainViewModel.GetInstance().Registro = new RegistroViewModel();
-            navigationService.SetMainPage("MasterPage");
+          //  navigationService.SetMainPage("MasterPage");
 
 
 

@@ -27,7 +27,6 @@
     <Folder Include="CustomControl\" />
     <Folder Include="Infrastructure\" />
     <Folder Include="Interface\" />
-    <Folder Include="Models\" />
     <Folder Include="Renderers\" />
     <Folder Include="Service\" />
   </ItemGroup>
