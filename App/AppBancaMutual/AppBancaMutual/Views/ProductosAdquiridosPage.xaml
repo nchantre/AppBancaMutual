@@ -16,9 +16,182 @@
     <ContentPage.Content>
         <StackLayout Spacing="0"
                      BindingContext="{Binding productosAdquiridosViewModel}">
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Spacing="0">
+                <StackLayout
+                    Margin="0,25,0,0"
+                    BackgroundColor="White"
+                    HeightRequest="70"
+                    Orientation="Horizontal"
+                    Spacing="0">
+                    <Label
+                        Margin=" 36,0,0,0"
+                        FontFamily="{StaticResource PingFangMedium}"
+                        FontSize="20"
+                        HorizontalOptions="CenterAndExpand"
+                        LineBreakMode="TailTruncation"
+                        Text="Productos Adquiridos"
+                        TextColor="#2E2E2E"
+                        VerticalOptions="CenterAndExpand"
+                        VerticalTextAlignment="Center" />
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+            <pancakeView:PancakeView
+                        Margin="10,0,10,10"
+                        Padding="10"
+                        BackgroundColor="White"
+                        >
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            <Label
+                                        FontFamily="{StaticResource PingFangRegular}"
+                                        FontSize="14"
+                                        Text="Fecha de Ingreso"
+                                        TextColor="#252525" />
+                            <Label
+                                        FontFamily="{StaticResource PingFangRegular}"
+                                        FontSize="18"
+                                        Text="28/08/2023"
+                                        TextColor="DarkGray" />
+                        </StackLayout>
+                    </StackLayout>
+        
+                </StackLayout>
+            </pancakeView:PancakeView>
+            <ScrollView x:Name="MainScroll">
+                <StackLayout Margin="0,0,0,15" Spacing="10">
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout Margin="10,0,0,0">
+                            <Label
+                                FontFamily="{StaticResource PingFangMedium}"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                Text="Seguro Funebre"
+                                TextColor="#2E2E2E"
+                                VerticalOptions="Start"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="25"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Activo"
+                            TextColor="{StaticResource MainColor}"
+                            VerticalOptions="StartAndExpand" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout Margin="10,0,0,0">
+                            <Label
+                                FontFamily="{StaticResource PingFangMedium}"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                Text="Seguro Cooperativa"
+                                TextColor="#2E2E2E"
+                                VerticalOptions="Start"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="25"
+                            HorizontalOptions="EndAndExpand"
+                            Text="Activo"
+                            TextColor="{StaticResource MainColor}"
+                            VerticalOptions="StartAndExpand" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout Margin="10,0,0,0">
+                            <Label
+                                FontFamily="{StaticResource PingFangMedium}"
+                                FontSize="20"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                Text="Familiares Asegurados"
+                                TextColor="#2E2E2E"
+                                VerticalOptions="Start"
+                                VerticalTextAlignment="Center" />
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="25"
+                            HorizontalOptions="EndAndExpand"
+                            Text="N° 3"
+                            TextColor="{StaticResource MainColor}"
+                            VerticalOptions="StartAndExpand" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout Margin="10,0,0,0">
+                            <Label
+                                FontFamily="{StaticResource PingFangMedium}"
+                                FontSize="15"
+                                HorizontalOptions="Start"
+                                LineBreakMode="TailTruncation"
+                                Text="Prestamos Realizados"
+                                TextColor="#2E2E2E"
+                                VerticalOptions="Start"
+                                VerticalTextAlignment="Center" />
+
+                        </StackLayout>
+
+                        <Label
+                            Margin="0,0,10,0"
+                            FontAttributes="Bold"
+                            FontFamily="{StaticResource PingFangMedium}"
+                            FontSize="20"
+                            HorizontalOptions="EndAndExpand"
+                            Text="0"
+                            TextColor="{StaticResource MainColor}"
+                            VerticalOptions="StartAndExpand" />
+                    </StackLayout>
+
+                    <ScrollView
+                        Margin="10,0,10,0"
+                        HorizontalOptions="FillAndExpand"
+                        Orientation="Horizontal">
+
+                    </ScrollView>
+
+
+
+
+
+
+
+                    <Button 
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            Command="{Binding PagoCommand}"
+                            Margin="50,10,50,10"
+                            BackgroundColor="#D48C24"
+                            BorderColor="#D48C24"
+                            BorderWidth="2"
+                            CornerRadius="30"
+                            FontFamily="{StaticResource PingFangRegular}"
+                            FontSize="12"
+                            HeightRequest="57"
+                            HorizontalOptions="CenterAndExpand"
+                            Text=" Adquirir Productos"
+                            TextColor="White"
+                            WidthRequest="227" />
+                </StackLayout>
+            </ScrollView>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
