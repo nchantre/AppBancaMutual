@@ -124,14 +124,17 @@ namespace AppBancaMutual.ViewModels
                var rt = JsonConvert.DeserializeObject<ResponseUsuario>(json_respuesta);
                 if (rt.apellido != null)
                 {
-                    await Application.Current.MainPage.DisplayAlert(
-                     "Alert",
-                     "El registro fue Exitoso Se comunicara con asesor de Banca Mutual !",
-                     "Accept");
+                    //await Application.Current.MainPage.DisplayAlert(
+                    // "Alert",
+                    // "El registro fue Exitoso Se comunicara con asesor de Banca Mutual !",
+                    // "Accept");
 
-                    string CodigoPaisCelular;
-                    CodigoPaisCelular = "+573207550469";
-                    Chat.Open(CodigoPaisCelular);
+                    MainViewModel.GetInstance().Registro = new RegistroViewModel();
+                    navigationService.SetMainPage("MasterPage");
+
+                    //string CodigoPaisCelular;
+                    //CodigoPaisCelular = "+573207550469";
+                    //Chat.Open(CodigoPaisCelular);
 
            
                 }
